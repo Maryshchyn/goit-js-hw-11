@@ -11,9 +11,9 @@ export default  class NewsApiService{
         return fetch(ulr)
             .then(r => r.json())
             .then(data => {
-                console.log(data)
+                // console.log(data)
                 this.incrementPage();
-                return data.articles;
+                return data.hits;
                 // console.log(this);
     })
     }

@@ -1,4 +1,5 @@
-export default function markUp({
+export default function markup({
+  largeImageURL,
   webformatURL,
   tags,
   likes,
@@ -6,22 +7,22 @@ export default function markUp({
   comments,
   downloads,
 }) {
-  return `<div class="photo-card">
-      <img class="photo-image" src="${webformatURL}" alt="${tags}" loading="lazy" /></a>
-    <div class="photo-info">
-    <p class="info-item">
+  return `<div class="gallery__card">
+    <a class="gallery__item" href="${largeImageURL}">
+      <img class="gallery__image" src="${webformatURL}" alt="${tags}" loading="lazy" /></a>
+    <div class="gallery__info">
+    <p class="gallery__info-item">
       <b>Likes</b>${likes}
     </p>
-    <p class="info-item">
+    <p class="gallery__info-item">
       <b>Views</b>${views}
     </p>
-    <p class="info-item">
+    <p class="gallery__info-item">
       <b>Comments</b>${comments}
     </p>
-    <p class="info-item">
+    <p class="gallery__info-item">
       <b>Downloads</b>${downloads}
     </p>
   </div>
-</div>
-<button type="button" class="load-more">Load more</button>`;
-};
+</div>`;
+}

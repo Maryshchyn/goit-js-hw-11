@@ -1,15 +1,16 @@
 
-import articlesTempl from './js/markup'
+import articlesTempl from './js/markup';
 import NewsApiService from './js/nevs-servise';
 
 const searchForm = document.querySelector('.search-form');
+const articlesContainer = document.querySelector('js-articles-container');
 const loadMoreBtn = document.querySelector('.load-more');
-const articlesContainer = document.querySelector('[name="searchQuery"]')
 
 const newApiService = new NewsApiService();
- 
-loadMoreBtn.addEventListener('click', onLoadMore);
+
 searchForm.addEventListener('submit', onSearch);
+loadMoreBtn.addEventListener('click', onLoadMore);
+
 
 
 function onSearch(e) {
@@ -27,6 +28,6 @@ function onLoadMore() {
     newApiService.fethArticle().then(appendArticlesMarkup);
 };
 
-function appendArticlesMarkup(articles) {
-    articlesContainer.insertAdjacentHTML('beforeend', articlesTempl(articles))
+function appendArticlesMarkup(hits) {
+    articlesContainer.insertAdjacentHTML('beforeend', articlesTempl(hits));
 }
