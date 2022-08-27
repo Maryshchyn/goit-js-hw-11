@@ -1,6 +1,9 @@
 @import './common';
 @import './example';
 
+body{
+    display: flex;
+}
 .gallery__image{
     margin: 5px;
     height: 200px;
@@ -30,4 +33,16 @@
 }
 .hidden{
     display: none;
+}
+.search-form{
+    padding: 12px 0;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+}
+.load-more{
+    
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
 }
