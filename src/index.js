@@ -29,5 +29,5 @@ function onLoadMore() {
 };
 
 function appendArticlesMarkup(hits) {
-    articlesContainer.insertAdjacentHTML('beforeend', articlesTempl(hits));
+    articlesContainer.insertAdjacentHTML('beforeend', hits.map(articlesTempl).join(''));
 }
