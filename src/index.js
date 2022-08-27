@@ -3,7 +3,7 @@ import articlesTempl from './js/markup';
 import NewsApiService from './js/nevs-servise';
 
 const searchForm = document.querySelector('.search-form');
-const articlesContainer = document.querySelector('js-articles-container');
+const articlesContainer = document.querySelector('.js-articles-container');
 const loadMoreBtn = document.querySelector('.load-more');
 
 const newApiService = new NewsApiService();
