@@ -10,12 +10,14 @@ const newApiService = new NewsApiService();
 
 searchForm.addEventListener('submit', onSearch);
 loadMoreBtn.addEventListener('click', onLoadMore);
-
+loadMoreBtn.classList.add('hidden');
+loadMoreBtn.classList.remove('load-more')
 
 
 function onSearch(e) {
     e.preventDefault();
-  
+    loadMoreBtn.classList.add('load-more');
+    loadMoreBtn.classList.remove('hidden')
     newApiService.query = e.currentTarget.elements.searchQuery.value.trim();
     newApiService.resetPage();
     newApiService.fethArticle().then(appendArticlesMarkup);
